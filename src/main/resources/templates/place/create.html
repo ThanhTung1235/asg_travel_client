@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Create place</h1>
+<form th:action="@{/place/create}" method="post" th:object="${placeDto}">
+    <div>
+        <label>Name : <input type="text" name="name" th:field="*{name}"/> </label>
+    </div>
+    <select th:field="*{citId}">
+        <option th:each="r : ${cities}" th:value="${r.mtp}" th:text="${r.name}"></option>
+    </select>
+    <select th:field="*{districtId}">
+        <option th:each="r : ${districts}" th:value="${r.maqh}" th:text="${r.name}"></option>
+    </select>
+    <div>
+        <input type="submit" value="Create"/>
+    </div>
+</form>
+
+
+</body>
+<script>
+
+</script>
+</html>
