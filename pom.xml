@@ -13,6 +13,7 @@
     <groupId>groupId</groupId>
     <artifactId>websevice-client</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <dependencies>
         <dependency>
             <groupId>com.google.code.gson</groupId>
