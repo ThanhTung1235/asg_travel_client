@@ -3,13 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 <h1>List member</h1>
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+    </tr>
+    </thead>
+    <tbody th:each="m: ${members}">
+    <tr>
+        <th th:text="${m.id}" scope="row"></th>
+    </tr>
+    <tr>
+        <th th:text="${m.name}" scope="row"></th>
+    </tr>
+    </tbody>
+</table>
+
+<!--
 <ul>
     <li th:each="m: ${members}">
         <span th:text="${m.id}"></span>.<span th:text="${m.name}"></span> - <span th:text="${m.password}"></span>
     </li>
 </ul>
+-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -48,15 +48,20 @@
 <!--&lt;!&ndash;        <span th:text="${m.member.name}"></span>&ndash;&gt;-->
 <!--&lt;!&ndash;    </li>&ndash;&gt;-->
 <!--</div>-->
-<div class="media position-relative container" style="margin-top:100px; margin-bottom: 100px;">
-    <img th:src="@{${p.photo}}" class="mr-3" alt="...">
-    <div class="media-body">
-        <h2 class="mt-0" th:text="${p.name}" style="margin-bottom: 5px"></h2>
-        <strong>Địa điểm: </strong> <span th:text="${p.city.name}"></span>, <span th:text="${p.district.name}"></span>
-        <p>Hồ Hoàn Kiếm (Hồ Gươm) không chỉ là biểu tượng văn hóa, lịch sử của thủ đô mà còn là điểm đến yêu thích của du khách trong và ngoài nước khi đi du lịch Hà Nội. Trước khi đến chiêm ngưỡng vẻ đẹp mê hoặc và khám khá quần thể các di tích của hồ Hoàn Kiếm, du khách đừng quên tham khảo những thông tin giới thiệu đôi nét về Hồ Hoàn Kiếm (Hồ Gươm) ở Hà Nội vô cùng chi tiết dưới đây.</p>
-        <a href="#" class="stretched-link">Tiếp theo</a>
+<div class="container">
+    <div class="media position-relative container row" style="margin-top:100px; margin-bottom: 100px;">
+        <div class="col-8">
+            <img th:src="@{${p.photo}}" class="mr-3 img-fluid" alt="...">
+        </div>
+        <div class="media-body col-4">
+            <h2 class="mt-0" th:text="${p.name}" style="margin-bottom: 5px"></h2>
+            <strong>Địa điểm: </strong> <span th:text="${p.city.name}"></span>, <span th:text="${p.district.name}"></span>
+            <p>Hồ Hoàn Kiếm (Hồ Gươm) không chỉ là biểu tượng văn hóa, lịch sử của thủ đô mà còn là điểm đến yêu thích của du khách trong và ngoài nước khi đi du lịch Hà Nội. Trước khi đến chiêm ngưỡng vẻ đẹp mê hoặc và khám khá quần thể các di tích của hồ Hoàn Kiếm, du khách đừng quên tham khảo những thông tin giới thiệu đôi nét về Hồ Hoàn Kiếm (Hồ Gươm) ở Hà Nội vô cùng chi tiết dưới đây.</p>
+            <a href="#" class="stretched-link">Tiếp theo</a>
+        </div>
     </div>
 </div>
+
 <footer class="py-5 bg-dark">
     <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
