@@ -4,6 +4,15 @@ public class PlaceDto {
     private String name;
     private long citId;
     private long districtId;
+    private String imageUrl;
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     public String getName() {
         return name;

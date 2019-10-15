@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li th:text="${p.name}"></li>
+    <li th:text="${p.city.name}"></li>
+    <li th:text="${p.district.name}"></li>
+    <li><img th:src="@{${p.photo}}"></li>
+    <li th:each="m: ${p.comments}">
+        <span th:text="${m.comment}"></span>
+        <span th:text="${m.member.name}"></span>
+    </li>
+
+</ul>
+</body>
+</html>

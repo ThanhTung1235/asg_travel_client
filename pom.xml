@@ -46,6 +46,18 @@
             <artifactId>gson</artifactId>
             <version>2.8.5</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.cloudinary/cloudinary -->
+        <dependency>
+            <groupId>com.cloudinary</groupId>
+            <artifactId>cloudinary</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.cloudinary/cloudinary-taglib -->
+        <dependency>
+            <groupId>com.cloudinary</groupId>
+            <artifactId>cloudinary-taglib</artifactId>
+            <version>1.0.14</version>
+        </dependency>
 
     </dependencies>
 
@@ -58,5 +70,5 @@
         </plugins>
     </build>
 
-    
+
 </project>

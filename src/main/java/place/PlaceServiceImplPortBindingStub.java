@@ -93,6 +93,13 @@ public class PlaceServiceImplPortBindingStub extends org.apache.axis.client.Stub
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("http://place.service/", "comment");
+            cachedSerQNames.add(qName);
+            cls = place.Comment.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("http://place.service/", "district");
             cachedSerQNames.add(qName);
             cls = place.District.class;
@@ -100,9 +107,23 @@ public class PlaceServiceImplPortBindingStub extends org.apache.axis.client.Stub
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("http://place.service/", "member");
+            cachedSerQNames.add(qName);
+            cls = place.Member.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("http://place.service/", "place");
             cachedSerQNames.add(qName);
             cls = place.Place.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://place.service/", "rating");
+            cachedSerQNames.add(qName);
+            cls = place.Rating.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);

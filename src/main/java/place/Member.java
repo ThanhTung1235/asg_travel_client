@@ -1,38 +1,34 @@
 /**
- * Place.java
+ * Member.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package comment;
+package place;
 
-public class Place  implements java.io.Serializable {
+public class Member  implements java.io.Serializable {
     private long id;
 
     private java.lang.String name;
 
-    private double ratingCount;
+    private java.lang.String password;
 
-    private double ratingValue;
-
-    public Place() {
+    public Member() {
     }
 
-    public Place(
+    public Member(
            long id,
            java.lang.String name,
-           double ratingCount,
-           double ratingValue) {
+           java.lang.String password) {
            this.id = id;
            this.name = name;
-           this.ratingCount = ratingCount;
-           this.ratingValue = ratingValue;
+           this.password = password;
     }
 
 
     /**
-     * Gets the id value for this Place.
+     * Gets the id value for this Member.
      * 
      * @return id
      */
@@ -42,7 +38,7 @@ public class Place  implements java.io.Serializable {
 
 
     /**
-     * Sets the id value for this Place.
+     * Sets the id value for this Member.
      * 
      * @param id
      */
@@ -52,7 +48,7 @@ public class Place  implements java.io.Serializable {
 
 
     /**
-     * Gets the name value for this Place.
+     * Gets the name value for this Member.
      * 
      * @return name
      */
@@ -62,7 +58,7 @@ public class Place  implements java.io.Serializable {
 
 
     /**
-     * Sets the name value for this Place.
+     * Sets the name value for this Member.
      * 
      * @param name
      */
@@ -72,48 +68,28 @@ public class Place  implements java.io.Serializable {
 
 
     /**
-     * Gets the ratingCount value for this Place.
+     * Gets the password value for this Member.
      * 
-     * @return ratingCount
+     * @return password
      */
-    public double getRatingCount() {
-        return ratingCount;
+    public java.lang.String getPassword() {
+        return password;
     }
 
 
     /**
-     * Sets the ratingCount value for this Place.
+     * Sets the password value for this Member.
      * 
-     * @param ratingCount
+     * @param password
      */
-    public void setRatingCount(double ratingCount) {
-        this.ratingCount = ratingCount;
-    }
-
-
-    /**
-     * Gets the ratingValue value for this Place.
-     * 
-     * @return ratingValue
-     */
-    public double getRatingValue() {
-        return ratingValue;
-    }
-
-
-    /**
-     * Sets the ratingValue value for this Place.
-     * 
-     * @param ratingValue
-     */
-    public void setRatingValue(double ratingValue) {
-        this.ratingValue = ratingValue;
+    public void setPassword(java.lang.String password) {
+        this.password = password;
     }
 
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof Place)) return false;
-        Place other = (Place) obj;
+        if (!(obj instanceof Member)) return false;
+        Member other = (Member) obj;
         if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
@@ -126,8 +102,9 @@ public class Place  implements java.io.Serializable {
             ((this.name==null && other.getName()==null) || 
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
-            this.ratingCount == other.getRatingCount() &&
-            this.ratingValue == other.getRatingValue();
+            ((this.password==null && other.getPassword()==null) || 
+             (this.password!=null &&
+              this.password.equals(other.getPassword())));
         __equalsCalc = null;
         return _equals;
     }
@@ -143,21 +120,22 @@ public class Place  implements java.io.Serializable {
         if (getName() != null) {
             _hashCode += getName().hashCode();
         }
-        _hashCode += new Double(getRatingCount()).hashCode();
-        _hashCode += new Double(getRatingValue()).hashCode();
+        if (getPassword() != null) {
+            _hashCode += getPassword().hashCode();
+        }
         __hashCodeCalc = false;
         return _hashCode;
     }
 
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(Place.class, true);
+        new org.apache.axis.description.TypeDesc(Member.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://comment.service/", "place"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://place.service/", "member"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("id");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "Id"));
+        elemField.setXmlName(new javax.xml.namespace.QName("", "id"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
@@ -169,15 +147,10 @@ public class Place  implements java.io.Serializable {
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("ratingCount");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "ratingCount"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("ratingValue");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "ratingValue"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setFieldName("password");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "password"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
     }

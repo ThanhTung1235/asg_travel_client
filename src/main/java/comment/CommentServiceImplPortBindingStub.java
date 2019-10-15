@@ -100,13 +100,6 @@ public class CommentServiceImplPortBindingStub extends org.apache.axis.client.St
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://comment.service/", "place");
-            cachedSerQNames.add(qName);
-            cls = comment.Place.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
     }
 
     protected org.apache.axis.client.Call createCall() throws java.rmi.RemoteException {

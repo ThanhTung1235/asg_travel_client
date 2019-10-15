@@ -8,46 +8,22 @@
 package comment;
 
 public class Comment  implements java.io.Serializable {
-    private java.lang.String comment;
-
     private long id;
 
     private comment.Member member;
 
-    private comment.Place place;
+    private java.lang.String comment;
 
     public Comment() {
     }
 
     public Comment(
-           java.lang.String comment,
            long id,
            comment.Member member,
-           comment.Place place) {
-           this.comment = comment;
+           java.lang.String comment) {
            this.id = id;
            this.member = member;
-           this.place = place;
-    }
-
-
-    /**
-     * Gets the comment value for this Comment.
-     * 
-     * @return comment
-     */
-    public java.lang.String getComment() {
-        return comment;
-    }
-
-
-    /**
-     * Sets the comment value for this Comment.
-     * 
-     * @param comment
-     */
-    public void setComment(java.lang.String comment) {
-        this.comment = comment;
+           this.comment = comment;
     }
 
 
@@ -92,22 +68,22 @@ public class Comment  implements java.io.Serializable {
 
 
     /**
-     * Gets the place value for this Comment.
+     * Gets the comment value for this Comment.
      * 
-     * @return place
+     * @return comment
      */
-    public comment.Place getPlace() {
-        return place;
+    public java.lang.String getComment() {
+        return comment;
     }
 
 
     /**
-     * Sets the place value for this Comment.
+     * Sets the comment value for this Comment.
      * 
-     * @param place
+     * @param comment
      */
-    public void setPlace(comment.Place place) {
-        this.place = place;
+    public void setComment(java.lang.String comment) {
+        this.comment = comment;
     }
 
     private java.lang.Object __equalsCalc = null;
@@ -122,16 +98,13 @@ public class Comment  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            ((this.comment==null && other.getComment()==null) || 
-             (this.comment!=null &&
-              this.comment.equals(other.getComment()))) &&
             this.id == other.getId() &&
             ((this.member==null && other.getMember()==null) || 
              (this.member!=null &&
               this.member.equals(other.getMember()))) &&
-            ((this.place==null && other.getPlace()==null) || 
-             (this.place!=null &&
-              this.place.equals(other.getPlace())));
+            ((this.comment==null && other.getComment()==null) || 
+             (this.comment!=null &&
+              this.comment.equals(other.getComment())));
         __equalsCalc = null;
         return _equals;
     }
@@ -143,15 +116,12 @@ public class Comment  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        if (getComment() != null) {
-            _hashCode += getComment().hashCode();
-        }
         _hashCode += new Long(getId()).hashCode();
         if (getMember() != null) {
             _hashCode += getMember().hashCode();
         }
-        if (getPlace() != null) {
-            _hashCode += getPlace().hashCode();
+        if (getComment() != null) {
+            _hashCode += getComment().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -164,13 +134,6 @@ public class Comment  implements java.io.Serializable {
     static {
         typeDesc.setXmlType(new javax.xml.namespace.QName("http://comment.service/", "comment"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("comment");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "comment"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("id");
         elemField.setXmlName(new javax.xml.namespace.QName("", "id"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
@@ -184,9 +147,9 @@ public class Comment  implements java.io.Serializable {
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("place");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "place"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://comment.service/", "place"));
+        elemField.setFieldName("comment");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "comment"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
