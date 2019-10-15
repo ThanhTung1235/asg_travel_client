@@ -82,6 +82,13 @@ public class RatingServiceImplPortBindingStub extends org.apache.axis.client.Stu
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("http://rating.service/", "comment");
+            cachedSerQNames.add(qName);
+            cls = rating.Comment.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("http://rating.service/", "district");
             cachedSerQNames.add(qName);
             cls = rating.District.class;

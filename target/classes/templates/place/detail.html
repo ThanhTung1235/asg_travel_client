@@ -3,18 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 </head>
 <body>
-<ul>
-    <li th:text="${p.name}"></li>
-    <li th:text="${p.city.name}"></li>
-    <li th:text="${p.district.name}"></li>
-    <li><img th:src="@{${p.photo}}"></li>
-    <li th:each="m: ${p.comments}">
-        <span th:text="${m.comment}"></span>
-        <span th:text="${m.member.name}"></span>
-    </li>
-
-</ul>
+<div class="row">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Travel Social</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<!--<div class="container" style="width: 700px">-->
+<!--    <h1 th:text="${p.name}"></h1>-->
+<!--    Thuộc : <smal th:text="${p.city.name}"></smal> , <span th:text="${p.district.name}"></span>-->
+<!--    <img class="card-img-top"  th:src="@{${p.photo}}" alt=""></a>-->
+<!--&lt;!&ndash;    <li th:each="m: ${p.comments}">&ndash;&gt;-->
+<!--&lt;!&ndash;        <span th:text="${m.comment}"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;        <span th:text="${m.member.name}"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;    </li>&ndash;&gt;-->
+<!--</div>-->
+<div class="media position-relative container" style="margin-top:100px; margin-bottom: 100px;">
+    <img th:src="@{${p.photo}}" class="mr-3" alt="...">
+    <div class="media-body">
+        <h2 class="mt-0" th:text="${p.name}" style="margin-bottom: 5px"></h2>
+        <strong>Địa điểm: </strong> <span th:text="${p.city.name}"></span>, <span th:text="${p.district.name}"></span>
+        <p>Hồ Hoàn Kiếm (Hồ Gươm) không chỉ là biểu tượng văn hóa, lịch sử của thủ đô mà còn là điểm đến yêu thích của du khách trong và ngoài nước khi đi du lịch Hà Nội. Trước khi đến chiêm ngưỡng vẻ đẹp mê hoặc và khám khá quần thể các di tích của hồ Hoàn Kiếm, du khách đừng quên tham khảo những thông tin giới thiệu đôi nét về Hồ Hoàn Kiếm (Hồ Gươm) ở Hà Nội vô cùng chi tiết dưới đây.</p>
+        <a href="#" class="stretched-link">Tiếp theo</a>
+    </div>
+</div>
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+</footer>
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,30 +1,34 @@
 /**
- * Photo.java
+ * Comment.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package photo;
+package rating;
 
-public class Photo  implements java.io.Serializable {
+public class Comment  implements java.io.Serializable {
     private long id;
 
-    private java.lang.String link;
+    private rating.Member member;
 
-    public Photo() {
+    private java.lang.String comment;
+
+    public Comment() {
     }
 
-    public Photo(
+    public Comment(
            long id,
-           java.lang.String link) {
+           rating.Member member,
+           java.lang.String comment) {
            this.id = id;
-           this.link = link;
+           this.member = member;
+           this.comment = comment;
     }
 
 
     /**
-     * Gets the id value for this Photo.
+     * Gets the id value for this Comment.
      * 
      * @return id
      */
@@ -34,7 +38,7 @@ public class Photo  implements java.io.Serializable {
 
 
     /**
-     * Sets the id value for this Photo.
+     * Sets the id value for this Comment.
      * 
      * @param id
      */
@@ -44,28 +48,48 @@ public class Photo  implements java.io.Serializable {
 
 
     /**
-     * Gets the link value for this Photo.
+     * Gets the member value for this Comment.
      * 
-     * @return link
+     * @return member
      */
-    public java.lang.String getLink() {
-        return link;
+    public rating.Member getMember() {
+        return member;
     }
 
 
     /**
-     * Sets the link value for this Photo.
+     * Sets the member value for this Comment.
      * 
-     * @param link
+     * @param member
      */
-    public void setLink(java.lang.String link) {
-        this.link = link;
+    public void setMember(rating.Member member) {
+        this.member = member;
+    }
+
+
+    /**
+     * Gets the comment value for this Comment.
+     * 
+     * @return comment
+     */
+    public java.lang.String getComment() {
+        return comment;
+    }
+
+
+    /**
+     * Sets the comment value for this Comment.
+     * 
+     * @param comment
+     */
+    public void setComment(java.lang.String comment) {
+        this.comment = comment;
     }
 
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof Photo)) return false;
-        Photo other = (Photo) obj;
+        if (!(obj instanceof Comment)) return false;
+        Comment other = (Comment) obj;
         if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
@@ -75,9 +99,12 @@ public class Photo  implements java.io.Serializable {
         boolean _equals;
         _equals = true && 
             this.id == other.getId() &&
-            ((this.link==null && other.getLink()==null) || 
-             (this.link!=null &&
-              this.link.equals(other.getLink())));
+            ((this.member==null && other.getMember()==null) || 
+             (this.member!=null &&
+              this.member.equals(other.getMember()))) &&
+            ((this.comment==null && other.getComment()==null) || 
+             (this.comment!=null &&
+              this.comment.equals(other.getComment())));
         __equalsCalc = null;
         return _equals;
     }
@@ -90,8 +117,11 @@ public class Photo  implements java.io.Serializable {
         __hashCodeCalc = true;
         int _hashCode = 1;
         _hashCode += new Long(getId()).hashCode();
-        if (getLink() != null) {
-            _hashCode += getLink().hashCode();
+        if (getMember() != null) {
+            _hashCode += getMember().hashCode();
+        }
+        if (getComment() != null) {
+            _hashCode += getComment().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -99,10 +129,10 @@ public class Photo  implements java.io.Serializable {
 
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(Photo.class, true);
+        new org.apache.axis.description.TypeDesc(Comment.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://photo.service/", "photo"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://rating.service/", "comment"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("id");
         elemField.setXmlName(new javax.xml.namespace.QName("", "id"));
@@ -110,8 +140,15 @@ public class Photo  implements java.io.Serializable {
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("link");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "link"));
+        elemField.setFieldName("member");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "member"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://rating.service/", "member"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("comment");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "comment"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);

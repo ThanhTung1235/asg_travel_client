@@ -8,8 +8,6 @@
 package rating;
 
 public class District  implements java.io.Serializable {
-    private rating.City city;
-
     private long maqh;
 
     private java.lang.String name;
@@ -20,34 +18,12 @@ public class District  implements java.io.Serializable {
     }
 
     public District(
-           rating.City city,
            long maqh,
            java.lang.String name,
            java.lang.String type) {
-           this.city = city;
            this.maqh = maqh;
            this.name = name;
            this.type = type;
-    }
-
-
-    /**
-     * Gets the city value for this District.
-     * 
-     * @return city
-     */
-    public rating.City getCity() {
-        return city;
-    }
-
-
-    /**
-     * Sets the city value for this District.
-     * 
-     * @param city
-     */
-    public void setCity(rating.City city) {
-        this.city = city;
     }
 
 
@@ -122,9 +98,6 @@ public class District  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            ((this.city==null && other.getCity()==null) || 
-             (this.city!=null &&
-              this.city.equals(other.getCity()))) &&
             this.maqh == other.getMaqh() &&
             ((this.name==null && other.getName()==null) || 
              (this.name!=null &&
@@ -143,9 +116,6 @@ public class District  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        if (getCity() != null) {
-            _hashCode += getCity().hashCode();
-        }
         _hashCode += new Long(getMaqh()).hashCode();
         if (getName() != null) {
             _hashCode += getName().hashCode();
@@ -164,13 +134,6 @@ public class District  implements java.io.Serializable {
     static {
         typeDesc.setXmlType(new javax.xml.namespace.QName("http://rating.service/", "district"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("city");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "city"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://rating.service/", "city"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("maqh");
         elemField.setXmlName(new javax.xml.namespace.QName("", "maqh"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));

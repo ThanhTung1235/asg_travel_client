@@ -10,32 +10,44 @@ package rating;
 public class Place  implements java.io.Serializable {
     private rating.City city;
 
+    private rating.Comment[] comments;
+
     private rating.District district;
 
     private long id;
 
     private java.lang.String name;
 
+    private java.lang.String photo;
+
     private double ratingCount;
 
     private double ratingValue;
+
+    private rating.Rating[] ratings;
 
     public Place() {
     }
 
     public Place(
            rating.City city,
+           rating.Comment[] comments,
            rating.District district,
            long id,
            java.lang.String name,
+           java.lang.String photo,
            double ratingCount,
-           double ratingValue) {
+           double ratingValue,
+           rating.Rating[] ratings) {
            this.city = city;
+           this.comments = comments;
            this.district = district;
            this.id = id;
            this.name = name;
+           this.photo = photo;
            this.ratingCount = ratingCount;
            this.ratingValue = ratingValue;
+           this.ratings = ratings;
     }
 
 
@@ -56,6 +68,34 @@ public class Place  implements java.io.Serializable {
      */
     public void setCity(rating.City city) {
         this.city = city;
+    }
+
+
+    /**
+     * Gets the comments value for this Place.
+     * 
+     * @return comments
+     */
+    public rating.Comment[] getComments() {
+        return comments;
+    }
+
+
+    /**
+     * Sets the comments value for this Place.
+     * 
+     * @param comments
+     */
+    public void setComments(rating.Comment[] comments) {
+        this.comments = comments;
+    }
+
+    public rating.Comment getComments(int i) {
+        return this.comments[i];
+    }
+
+    public void setComments(int i, rating.Comment _value) {
+        this.comments[i] = _value;
     }
 
 
@@ -120,6 +160,26 @@ public class Place  implements java.io.Serializable {
 
 
     /**
+     * Gets the photo value for this Place.
+     * 
+     * @return photo
+     */
+    public java.lang.String getPhoto() {
+        return photo;
+    }
+
+
+    /**
+     * Sets the photo value for this Place.
+     * 
+     * @param photo
+     */
+    public void setPhoto(java.lang.String photo) {
+        this.photo = photo;
+    }
+
+
+    /**
      * Gets the ratingCount value for this Place.
      * 
      * @return ratingCount
@@ -158,6 +218,34 @@ public class Place  implements java.io.Serializable {
         this.ratingValue = ratingValue;
     }
 
+
+    /**
+     * Gets the ratings value for this Place.
+     * 
+     * @return ratings
+     */
+    public rating.Rating[] getRatings() {
+        return ratings;
+    }
+
+
+    /**
+     * Sets the ratings value for this Place.
+     * 
+     * @param ratings
+     */
+    public void setRatings(rating.Rating[] ratings) {
+        this.ratings = ratings;
+    }
+
+    public rating.Rating getRatings(int i) {
+        return this.ratings[i];
+    }
+
+    public void setRatings(int i, rating.Rating _value) {
+        this.ratings[i] = _value;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof Place)) return false;
@@ -173,6 +261,9 @@ public class Place  implements java.io.Serializable {
             ((this.city==null && other.getCity()==null) || 
              (this.city!=null &&
               this.city.equals(other.getCity()))) &&
+            ((this.comments==null && other.getComments()==null) || 
+             (this.comments!=null &&
+              java.util.Arrays.equals(this.comments, other.getComments()))) &&
             ((this.district==null && other.getDistrict()==null) || 
              (this.district!=null &&
               this.district.equals(other.getDistrict()))) &&
@@ -180,8 +271,14 @@ public class Place  implements java.io.Serializable {
             ((this.name==null && other.getName()==null) || 
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
+            ((this.photo==null && other.getPhoto()==null) || 
+             (this.photo!=null &&
+              this.photo.equals(other.getPhoto()))) &&
             this.ratingCount == other.getRatingCount() &&
-            this.ratingValue == other.getRatingValue();
+            this.ratingValue == other.getRatingValue() &&
+            ((this.ratings==null && other.getRatings()==null) || 
+             (this.ratings!=null &&
+              java.util.Arrays.equals(this.ratings, other.getRatings())));
         __equalsCalc = null;
         return _equals;
     }
@@ -196,6 +293,17 @@ public class Place  implements java.io.Serializable {
         if (getCity() != null) {
             _hashCode += getCity().hashCode();
         }
+        if (getComments() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getComments());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getComments(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
         if (getDistrict() != null) {
             _hashCode += getDistrict().hashCode();
         }
@@ -203,8 +311,22 @@ public class Place  implements java.io.Serializable {
         if (getName() != null) {
             _hashCode += getName().hashCode();
         }
+        if (getPhoto() != null) {
+            _hashCode += getPhoto().hashCode();
+        }
         _hashCode += new Double(getRatingCount()).hashCode();
         _hashCode += new Double(getRatingValue()).hashCode();
+        if (getRatings() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getRatings());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getRatings(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
         __hashCodeCalc = false;
         return _hashCode;
     }
@@ -221,6 +343,14 @@ public class Place  implements java.io.Serializable {
         elemField.setXmlType(new javax.xml.namespace.QName("http://rating.service/", "city"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("comments");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "comments"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://rating.service/", "comment"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
+        elemField.setMaxOccursUnbounded(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("district");
@@ -243,6 +373,13 @@ public class Place  implements java.io.Serializable {
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("photo");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "photo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("ratingCount");
         elemField.setXmlName(new javax.xml.namespace.QName("", "ratingCount"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
@@ -253,6 +390,14 @@ public class Place  implements java.io.Serializable {
         elemField.setXmlName(new javax.xml.namespace.QName("", "ratingValue"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
         elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ratings");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "ratings"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://rating.service/", "rating"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
+        elemField.setMaxOccursUnbounded(true);
         typeDesc.addFieldDesc(elemField);
     }
 
